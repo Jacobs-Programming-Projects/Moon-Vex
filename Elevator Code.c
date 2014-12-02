@@ -50,45 +50,107 @@ task main()
       if (SensorValue[secondbutton] == 1) thirdfloor = 2;
     	if (SensorValue[thirdbutton] == 1) thirdfloor = 3;
   };
-if (condition)
+if (firstfloor == 1)
 {
-  body
-}
-if (condition)
-{
-  body
-}
-if (condition)
-{
-  body
-}
-if (condition)
-{
-  body
-}
-if (condition)
-{
-  body
-}
-if (condition)
-{
-  body
-}if (condition)
-{
-  body
-}
-if (condition)
-{
-  body
-}
-if (condition)
-{
-  body
-}
-
-	}
-		startMotor(leftmotor, 127);
+  	startMotor(leftmotor, 127);
 		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[bottom] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (firstfloor == 2)
+{
+  	startMotor(leftmotor, 127);
+		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[middlebottom] == 1);
+		waitUntil(SensorValue[middletop] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (firstfloor == 3)
+{
+  	startMotor(leftmotor, 127);
+		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[top] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (secondfloor == 1)
+{
+		startMotor(leftmotor, -127);
+		startMotor(rightmotor, -127);
+		waitUntil(SensorValue[bottom] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (secondfloor == 2 && firstfloor == 1)
+{
+    startMotor(leftmotor, 127);
+		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[middlebottom] == 1);
+		waitUntil(SensorValue[middletop] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (secondfloor == 2 && firstfloor == 3)
+{
+  	startMotor(leftmotor, -127);
+		startMotor(rightmotor, -127);
+		waitUntil(SensorValue[middlebottom] == 1);
+		waitUntil(SensorValue[middletop] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (secondfloor == 3)
+{
+  	startMotor(leftmotor, 127);
+		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[top] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (thirdfloor == 1)
+{
+  	startMotor(leftmotor, -127);
+		startMotor(rightmotor, -127);
+		waitUntil(SensorValue[bottom] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (thirdfloor == 2 && secondfloor == 1)
+{
+    startMotor(leftmotor, 127);
+		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[middlebottom] == 1);
+		waitUntil(SensorValue[middletop] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (thirdfloor == 2 && secondfloor == 3)
+{
+  	startMotor(leftmotor, -127);
+		startMotor(rightmotor, -127);
+		waitUntil(SensorValue[middlebottom] == 1);
+		waitUntil(SensorValue[middletop] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+if (thirdfloor == 3)
+{
+  startMotor(leftmotor, 127);
+		startMotor(rightmotor, 127);
+		waitUntil(SensorValue[top] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+}
+		startMotor(leftmotor, -127);
+		startMotor(rightmotor, -127);
+		waitUntil(SensorValue[bottom] == 1);
+		stopMotor(leftmotor);
+		stopMotor(rightmotor);
+	}
+		startMotor(leftmotor, -127);
+		startMotor(rightmotor, -127);
 		waitUntil(SensorValue[bottom] == 1);
 		stopMotor(leftmotor);
 		stopMotor(rightmotor);
