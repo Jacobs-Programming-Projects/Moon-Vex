@@ -19,7 +19,7 @@
 	Elevator
 
   Pseudocode:
- While loop : emergency stop not pressed
+ If ebutton pressed => goto end
  		get input
  		go to floors in specified order
  		return to bottom floor
@@ -34,6 +34,7 @@ task main()
     int firstfloor = 0;    //erase the stored floors
     int secondfloor = 0;
     int thirdfloor = 0;
+    int xyz = 1;
     while (firstfloor == 0) //get first floor input
     {
     	if (SensorValue[firstbutton] == 1) firstfloor = 1; //input = first floor
@@ -61,121 +62,132 @@ task main()
     	if (thirdfloor == 2) untilRelease(secondbutton);
    		if (thirdfloor == 3) untilRelease(thirdbutton);
   };
-  if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+  if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (firstfloor == 1) //if firstfloor = 1
 {
   	startMotor(leftmotor, -60); //go down until //go up until
   	while (SensorValue[bottom] != 1) //on bottom floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (firstfloor == 2) //if firstfloor = 2
 {
   	startMotor(leftmotor, 60); //go up until
 while (SensorValue[midfloor] >= 1)//on middle floor
 {
-  if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+  if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (firstfloor == 3)
 {
   	startMotor(leftmotor, 60);//go up until
 	while (SensorValue[top] != 1) //on top floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (secondfloor == 1)
 {
 		startMotor(leftmotor, -60); //go down until
 	while (SensorValue[bottom] != 1) //on bottom floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (secondfloor == 2 && firstfloor == 1)
 {
     startMotor(leftmotor, 60);//go up until
 while (SensorValue[midfloor] >= 1)//on middle floor
 {
-  if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+  if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (secondfloor == 2 && firstfloor == 3)
 {
   	startMotor(leftmotor, -60); //go down until
 while (SensorValue[midfloor] >= 1)//on middle floor
 {
-  if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+  if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (secondfloor == 3)
 {
   	startMotor(leftmotor, 60);//go up until
 	while (SensorValue[top] != 1) //on top floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (thirdfloor == 1)
 {
   	startMotor(leftmotor, -60); //go down until
 	while (SensorValue[bottom] != 1) //on bottom floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (thirdfloor == 2 && secondfloor == 1)
 {
     startMotor(leftmotor, 60);//go up until
 while (SensorValue[midfloor] >= 1)//on middle floor
 {
-  if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+  if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (thirdfloor == 2 && secondfloor == 3)
 {
   	startMotor(leftmotor, -60); //go down until
 while (SensorValue[midfloor] >= 1)//on middle floor
 {
-  if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+  if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 if (thirdfloor == 3)
 {
   startMotor(leftmotor, 60);//go up until
 	while (SensorValue[top] != 1) //on top floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 		wait(1); // wait for motion
 }//return to bottom floor
+if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop true, exit loop
 		startMotor(leftmotor, -60); //go down until
 			while (SensorValue[bottom] != 1) //on bottom floor
     {
-      if (SensorValue[emergencystop] == 1) goto estop; //if emergency stop = true, exit loop
+      if (SensorValue[emergencystop] == xyz) goto estop; //if emergency stop = true, exit loop
     }
 		stopMotor(leftmotor);//stop motor
 	}// emergency return to bottom floor
